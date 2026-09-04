@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS326 — Students</title>
+</head>
+<body>
+  <h1>Students</h1>
+  <ul id="list"></ul>
+
+  <script>
+    // Exercise 4: fetch your own /students route and show the rows here.
+    async function load() {
+      const rows = await (await fetch('/students')).json();
+      document.getElementById('list').innerHTML =
+        rows.map(s => `<li>${s.name} - ${s.major}</li>`).join('');
+      // TODO: build the <li> items and set document.getElementById('list').innerHTML
+    }
+    load();
+  </script>
+</body>
+</html>
