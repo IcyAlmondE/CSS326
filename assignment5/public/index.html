@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Books</title>
+</head>
+<body>
+<h1>Books</h1>
+<ul id="list"></ul>
+<script>
+    async function load() {
+      const rows = await (await fetch('/books')).json();
+      document.getElementById('list').innerHTML =
+        rows.map(b => `<li>${b.title} - ${b.author}</li>`).join('');
+      // TODO: build the <li> items and set document.getElementById('list').innerHTML
+    }
+    load();
+</script>
+</body>
+</html>
