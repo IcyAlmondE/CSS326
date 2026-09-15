@@ -1,0 +1,29 @@
+/* public/style.css */
+/* Task 6 (2 pts) says basic styling is enough: some spacing, a border on
+   each row, and a styled button. See Lab Sheet 06, Section 10.4 for the
+   pattern (selectors targeting #list, li, and button). */
+
+/* TODO: style body (e.g. font-family, max-width, margin) */
+body {
+font-family: Arial, sans-serif;
+max-width: 480px;
+margin: 40px auto;
+}
+
+/* TODO: style your list rows (padding, border-bottom) */
+#list {
+list-style: none;
+padding: 0;
+}
+
+#list li {
+padding: 8px;
+border-bottom: 1px solid #ddd;
+}
+
+/* TODO: style your button (background, color, border) */
+button {
+background: #1E8A82;
+color: white;
+border: none;
+}
