@@ -1,0 +1,21 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>Customer Orders</title>
+</head>
+<body>
+  <h1>Customer Orders</h1>
+  <label>Customer: <select id="customer"></select></label>
+  <h2 id="who"></h2>
+  <ul id="list"></ul>
+  <p id="message"></p>
+  <form id="orderForm">
+    <select id="book" required></select>
+    <input name="quantity" type="number" min="1" value="1" required>
+    <button type="submit">Place order</button>
+  </form>
+  <script src="orders.js"></script>
+</body>
+</html>

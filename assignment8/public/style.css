@@ -1,0 +1,32 @@
+/* public/style.css */
+body {
+  font-family: Arial, sans-serif;
+  max-width: 480px;
+  margin: 40px auto;
+}
+
+#list {
+  list-style: none;
+  padding: 0;
+}
+
+#list li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background: #1E8A82;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+#message {
+  color: #C00000;
+  font-size: 14px;
+}
