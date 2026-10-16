@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>University App (Lab 10)</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 760px; margin: 30px auto; color: #1c1c1c; }
+    h1 { color: #1F3864; }
+    input { padding: 6px; width: 320px; }
+    button { padding: 6px 12px; }
+    pre { background: #f4f4f4; padding: 12px; border: 1px solid #ddd; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>Course search</h1>
+  <p>Search by exact title, for example <code>Operating Systems</code>.</p>
+  <input id="title" placeholder="Course title">
+  <button id="go">Search</button>
+  <pre id="out">Results appear here.</pre>
+
+  <script>
+    document.getElementById('go').addEventListener('click', async () => {
+      const title = document.getElementById('title').value;
+      const res = await fetch('/api/courses/search?title=' + encodeURIComponent(title));
+      const data = await res.json();
+      document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+    });
+  </script>
+</body>
+</html>
