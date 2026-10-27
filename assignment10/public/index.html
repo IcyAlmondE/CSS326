@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bookstore (Assignment 10)</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 760px; margin: 30px auto; color: #1c1c1c; }
+    h1 { color: #1F3864; }
+    input { padding: 6px; width: 320px; }
+    button { padding: 6px 12px; }
+    pre { background: #f4f4f4; padding: 12px; border: 1px solid #ddd; white-space: pre-wrap; max-height: 420px; overflow: auto; }
+  </style>
+</head>
+<body>
+  <h1>Books by author</h1>
+  <p>Search by exact author name, for example <code>Ben Forta</code>.</p>
+  <input id="author" placeholder="Author name">
+  <button id="go">Search</button>
+  <pre id="out">Results appear here.</pre>
+
+  <script>
+    document.getElementById('go').addEventListener('click', async () => {
+      const author = document.getElementById('author').value;
+      const res = await fetch('/books/search?author=' + encodeURIComponent(author));
+      const data = await res.json();
+      document.getElementById('out').textContent = JSON.stringify(data, null, 2);
+    });
+  </script>
+</body>
+</html>

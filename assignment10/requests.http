@@ -1,0 +1,29 @@
+### Assignment 10 test requests (VS Code "REST Client" extension, or Postman)
+
+### The first 20 books (the table now holds 50,008)
+GET http://localhost:3000/books
+
+### One book
+GET http://localhost:3000/books/3
+
+### Q5 - search by author (exact name)
+GET http://localhost:3000/books/search?author=Ben%20Forta
+
+### Q5 - the input ' OR '1'='1   (a quote is %27 and a space is %20 in a URL)
+GET http://localhost:3000/books/search?author=%27%20OR%20%271%27=%271
+
+### Q5 - a lone quote
+GET http://localhost:3000/books/search?author=%27
+
+### Customer 42's orders (the customer of Q3)
+GET http://localhost:3000/customers/42/orders
+
+### Q6 - once the app connects as bookstore_app, check that it still works.
+### Place an order (customer 2 buys 2 copies of book 3)
+POST http://localhost:3000/customers/2/orders
+Content-Type: application/json
+
+{ "book_id": 3, "quantity": 2 }
+
+### Q6 - cancel it (replace 131076 with the id that the POST returned)
+DELETE http://localhost:3000/customers/2/orders/131076
